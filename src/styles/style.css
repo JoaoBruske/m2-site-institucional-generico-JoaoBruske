@@ -39,8 +39,12 @@ html {
 }
 header {
   background: var(--gray-1);
+  width: 100vw;
   height: 12vh;
   display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 .header__container {
   width: 1256px;
@@ -128,6 +132,10 @@ header {
   width: 50%;
   margin-top: 100px;
 }
+.faq__left div {
+  position: sticky;
+  top: 14rem;
+}
 .faq__right {
   width: 50%;
   margin-top: 100px;
@@ -178,21 +186,23 @@ header {
   display: flex;
   flex-direction: row-reverse;
 }
-.comments__right {
+.comments__left {
   width: 50%;
   margin-top: 100px;
 }
-.comments__left {
+.comments__right {
   display: flex;
   justify-content: right;
   width: 50%;
   margin-top: 100px;
 }
-.comments__left div {
+.comments__right div {
   background-color: var(--brand-1);
   width: 70%;
   height: fit-content;
   padding: 80px 40px;
+  position: sticky;
+  top: 14rem;
 }
 .comments__title {
   color: var(--gray-7);
