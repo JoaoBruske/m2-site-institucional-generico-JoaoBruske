@@ -1,22 +1,14 @@
 :root {
-  --brand-1: #4c6ef5;
-  --brand-2: #364fc7;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
 
-  --gray-1: #191c1f;
-  --gray-2: #212529;
-  --gray-3: #343a40;
-  --gray-4: #adb5bd;
-  --gray-5: #ced4da;
-  --gray-6: #edf2ff;
-  --gray-7: #f8f9fa;
-
-  --title-1-size: 52px;
-  --title-2-size: 40px;
-  --title-3-size: 32px;
-  --text-1-size: 20px;
-  --text-2-size: 18px;
-  --text-3-size: 16px;
-  --text-4-size: 16px;
+  --title-1-size: clamp(2.5rem, 2.116rem + 1.444vw, 3.25rem); /* 52px */
+  --title-2-size: clamp(1.75rem, 1.366rem + 1.444vw, 2.5rem); /* 40px */
+  --title-3-size: clamp(1.25rem, 0.866rem + 1.444vw, 2rem); /* 32px */
+  --text-1-size: clamp(1.156rem, 1.108rem + 0.181vw, 1.25rem); /* 20px */
+  --text-2-size: clamp(1rem, 0.936rem + 0.241vw, 1.125rem); /* 18px */
+  --text-3-size: clamp(0.813rem, 0.717rem + 0.361vw, 1rem); /* 16px */
+  --text-4-size: clamp(0.813rem, 0.717rem + 0.361vw, 1rem); /* 16px */
 
   --title-1-weight: 600;
   --title-2-weight: 600;
@@ -33,52 +25,63 @@
   --text-2-lineHeight: 150%;
   --text-3-lineHeight: 150%;
   --text-4-lineHeight: 150%;
+
+  --brand-1: #4c6ef5;
+  --brand-2: #364fc7;
+
+  --gray-1: #191c1f;
+  --gray-2: #212529;
+  --gray-3: #343a40;
+  --gray-4: #adb5bd;
+  --gray-5: #ced4da;
+  --gray-6: #edf2ff;
+  --gray-7: #f8f9fa;
 }
-html {
-  font-family: "Inter", sans-serif;
-}
+
+/* =========================== Header =========================== */
 header {
   background: var(--gray-1);
-  width: 100vw;
+  width: 100%;
   height: 12vh;
-  display: flex;
+  border-bottom: solid 1px var(--brand-1);
   position: fixed;
   top: 0;
   z-index: 1;
 }
 .header__container {
-  width: 1256px;
+  max-width: 1256px;
+  height: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 .header__logo {
-  width: 18rem;
+  width: 13rem;
+  height: fit-content;
+  margin-right: 1rem;
 }
-.main {
-  display: flex;
-  justify-content: center;
-}
+/* =========================== Banner =========================== */
 .banner {
   background-color: var(--gray-2);
   height: 80vh;
+  margin-top: 12vh;
   display: flex;
+  align-items: center;
 }
 .banner div {
-  width: 1256px;
+  max-width: 1256px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .banner__title {
   color: var(--gray-6);
   font-size: var(--title-1-size);
   font-weight: var(--title-1-weight);
   line-height: var(--title-1-lineHeight);
-  margin-bottom: 50px;
   text-align: center;
+  margin: 0 1em 1em;
 }
 .banner__title span {
   color: var(--brand-1);
@@ -88,20 +91,19 @@ header {
   font-size: var(--text-1-size);
   font-weight: var(--text-1-weight);
   line-height: var(--text-1-lineHeight);
-  width: 61%;
-  margin-bottom: 40px;
   text-align: center;
+  margin: 0 8em 3em;
 }
+/* =========================== About =========================== */
 .about {
-  height: 28vh;
+  height: fit-content;
   background-color: var(--gray-1);
-  display: flex;
 }
 .about div {
-  width: 1256px;
+  max-width: 1256px;
+  height: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .about__title {
@@ -109,107 +111,111 @@ header {
   font-size: var(--title-2-size);
   font-weight: var(--title-2-weight);
   line-height: var(--title-2-lineHeight);
-  height: fit-content;
+  width: 50%;
 }
 .about__content {
   color: var(--gray-5);
   font-size: var(--text-1-size);
   font-weight: var(--text-1-weight);
   line-height: var(--text-1-lineHeight);
-  width: 46%;
   text-align: justify;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 0 0.8em;
+  margin: 4em 0;
 }
+/* =========================== FAQ =========================== */
 .faq {
   background-color: var(--gray-2);
-  height: 100vh;
 }
 .faq__container {
-  width: 1256px;
+  max-width: 1256px;
   margin: auto;
   display: flex;
 }
 .faq__left {
   width: 50%;
-  margin-top: 100px;
 }
 .faq__left div {
   position: sticky;
-  top: 14rem;
+  top: 10rem;
 }
 .faq__right {
   width: 50%;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
 }
 .faq__title {
   color: var(--gray-6);
   font-size: var(--title-2-size);
   font-weight: var(--title-2-weight);
   line-height: var(--title-2-lineHeight);
+  margin: 1.5em 0 1em;
 }
 .faq__content {
-  width: 90%;
-  margin: 40px 0px;
   color: var(--gray-4);
   font-size: var(--text-1-size);
   font-weight: var(--text-1-weight);
   line-height: var(--text-1-lineHeight);
   text-align: justify;
+  padding-right: 6em;
+  margin-bottom: 2em;
 }
-.faq__question {
-  display: inline-block;
-  width: 92%;
-}
+
 .faq__question h3 {
   color: var(--gray-6);
   font-size: var(--title-3-size);
   font-weight: var(--title-3-weight);
   line-height: var(--title-3-lineHeight);
   text-align: center;
+  margin: 2em 0 1em;
 }
 .faq__answer {
-  margin: 40px 0px;
   color: var(--gray-4);
   font-size: var(--text-1-size);
   font-weight: var(--text-1-weight);
   line-height: var(--text-1-lineHeight);
   text-align: justify;
+  padding: 0 0.8em;
 }
+/* =========================== Comments =========================== */
 .comments {
   background-color: var(--gray-2);
 }
 .comments__container {
-  width: 1256px;
+  max-width: 1256px;
   margin: auto;
   display: flex;
   flex-direction: row-reverse;
 }
 .comments__left {
+  font-size: var(--text-3-size);
   width: 50%;
-  margin-top: 100px;
+  margin-top: 8em;
+  margin-bottom: 6em;
 }
 .comments__right {
-  display: flex;
-  justify-content: right;
+  font-size: var(--text-3-size);
   width: 50%;
-  margin-top: 100px;
+  margin-top: 8em;
+  margin-bottom: 6em;
+  display: flex;
+  justify-content: end;
 }
 .comments__right div {
   background-color: var(--brand-1);
-  width: 70%;
+  font-size: var(--text-1-size);
+  width: 65%;
   height: fit-content;
-  padding: 80px 40px;
+  padding: 4em 4em;
+  margin: 0 0.8em 0 0.8em;
   position: sticky;
-  top: 14rem;
-  margin-bottom: 100px;
+  top: 10rem;
 }
 .comments__title {
   color: var(--gray-7);
   font-size: var(--title-2-size);
   font-weight: var(--title-2-weight);
   line-height: var(--title-2-lineHeight);
+  margin-bottom: 1em;
 }
 .comments__content {
   color: var(--gray-7);
@@ -217,26 +223,29 @@ header {
   font-weight: var(--text-1-weight);
   line-height: var(--text-1-lineHeight);
   text-align: justify;
-  margin-top: 30px;
 }
 .comments__comment {
   display: flex;
-  margin-bottom: 90px;
 }
 .comments__author {
-  width: 45%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 .comments__author h3 {
   color: var(--gray-6);
   font-size: var(--title-3-size);
   font-weight: var(--title-3-weight);
   line-height: var(--title-3-lineHeight);
+  text-align: left;
 }
 .comments__author p {
   color: var(--gray-4);
   font-size: var(--text-3-size);
   font-weight: var(--text-3-weight);
   line-height: var(--text-3-lineHeight);
+  text-align: left;
 }
 .comments__info {
   color: var(--gray-5);
@@ -244,28 +253,37 @@ header {
   font-weight: var(--text-2-weight);
   line-height: var(--text-2-lineHeight);
   text-align: justify;
-  width: 80%;
+  box-sizing: border-box;
+  width: 70%;
+  padding: 0 1em 4em;
 }
+/* =========================== Footer =========================== */
 footer {
   background-color: var(--gray-1);
 }
 .footer__container {
-  width: 1256px;
-  display: flex;
-  justify-content: center;
+  max-width: 1256px;
+  height: 12vh;
   margin: auto;
-  padding: 50px 0;
 }
 .footer__logo {
-  width: 16rem;
+  display: block;
+  width: 13rem;
+  height: 100%;
+  margin: auto;
 }
+/* =========================== Buttons =========================== */
 .button {
-  padding: 20px;
+  font-family: "Inter", sans-serif;
   color: var(--gray-7);
   font-size: var(--text-4-size);
   font-weight: var(--text-4-weight);
   line-height: var(--text-4-lineHeight);
   text-align: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 1.3em 2em;
+  margin: auto;
   border: none;
   cursor: pointer;
 }
@@ -279,6 +297,7 @@ footer {
 .button--default {
   background-color: var(--gray-1);
   color: var(--gray-7);
+  margin: 0;
   border: solid 1px var(--gray-7);
 }
 .button--default:hover {
@@ -286,22 +305,23 @@ footer {
   border-color: var(--brand-2);
   transition: 300ms;
 }
+/* =========================== Modal =========================== */
 .modal {
   background-color: var(--gray-2);
-  width: 20%;
+  width: 30%;
   height: fit-content;
-  border: solid 2px var(--brand-1);
   padding: 25px;
+  border: solid 2px var(--brand-1);
 }
-.modal::backdrop{
-  background: #191C1FCC;
+.modal::backdrop {
+  background: #191c1fcc;
   opacity: 0.8;
 }
-.modal div{
+.modal div {
+  margin-bottom: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 35px;
 }
 .modal__title {
   color: var(--gray-6);
@@ -312,10 +332,10 @@ footer {
 .modal__close {
   background-color: var(--gray-3);
   color: var(--gray-4);
+  font-family: "Nunito", sans-serif;
   font-size: var(--text-1-size);
   font-weight: var(--text-1-weight);
   line-height: var(--text-1-lineHeight);
-  font-family: "Nunito", sans-serif;
   font-weight: var(--text-4-weight);
   padding: 5px 15px;
   cursor: pointer;
@@ -325,6 +345,7 @@ footer {
   font-size: var(--text-3-size);
   font-weight: var(--text-3-weight);
   line-height: var(--text-3-lineHeight);
+  text-align: justify;
   margin-bottom: 30px;
 }
 .modal__input {
@@ -338,7 +359,6 @@ footer {
   padding: 15px 25px;
   margin-bottom: 30px;
   border: solid 1px var(--gray-1);
-/*   cursor: pointer; */
 }
 .modal__input:hover {
   background-color: var(--gray-3);
@@ -348,11 +368,163 @@ footer {
 .modal__input:focus {
   background-color: var(--gray-2);
   color: var(--gray-6);
-  outline: none;
   border-color: var(--brand-1);
+  outline: none;
   transition: 300ms;
 }
 .button--modal {
-  margin: auto;
   width: 100%;
+  margin: auto;
+}
+/* =========================== Tela > 1024px =========================== */
+@media (max-width: calc(1256px + 80px)) {
+  .header__container {
+    margin: 0 2.5em;
+  }
+  .about div {
+    margin: 0 2.5em;
+  }
+  .faq__container {
+    margin: 0 2.5em;
+  }
+  .comments__container {
+    margin: 0 2.5em;
+  }
+}
+/* =========================== Tela 1024px =========================== */
+@media (max-width: 1024px) {
+  .banner__content {
+    margin: 0 8em 3em;
+  }
+  .about__content {
+    padding: 0 0.8em;
+  }
+  .faq__content {
+    padding-right: 2em;
+  }
+  .comments__comment {
+    flex-direction: column;
+  }
+  .comments__author {
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+  .comments__info {
+    width: auto;
+  }
+  .comments__author h3 {
+    margin: 0.5em 1em 0.5em 0;
+  }
+  .comments__info {
+    width: auto;
+    padding: 0 2em 0 0;
+    margin-bottom: 2em;
+  }
+  .comments__right div {
+    width: auto;
+    padding: 3em 2.5em;
+  }
+  .modal {
+    width: 45%;
+  }
+}
+/* =========================== Tela 768px =========================== */
+@media (max-width: 768px) {
+  .header__container {
+    margin: 0 2em;
+  }
+  .banner__content {
+    margin: 0 6em 3em;
+  }
+  .about {
+    height: fit-content;
+  }
+  .about div {
+    margin: 0 2.4em;
+    flex-direction: column;
+  }
+  .about__title {
+    width: fit-content;
+    margin: 1em 0;
+  }
+  .about__content {
+    width: fit-content;
+    padding: 0;
+    margin: 0 0 2.5em;
+  }
+  .faq__container {
+    flex-direction: column;
+    margin: 0 2.4em;
+  }
+  .faq__left,
+  .faq__right {
+    width: auto;
+  }
+  .faq__title {
+    text-align: center;
+  }
+  .faq__content {
+    padding: 0;
+  }
+  #buttonFaq {
+    width: 100%;
+    display: block;
+  }
+  .faq__answer {
+    padding: 0;
+  }
+  .comments__container {
+    margin: 0 2.4em;
+    flex-direction: column;
+  }
+  .comments__left {
+    width: auto;
+    margin-top: 1em;
+    margin-bottom: 6em;
+  }
+  .comments__right {
+    width: auto;
+    margin-top: 6em;
+    margin-bottom: 1em;
+  }
+  .comments__info {
+    padding: 0;
+  }
+  .comments__right div {
+    margin: 0;
+  }
+  .modal {
+    width: 60%;
+  }
+}
+/* =========================== Tela 425px =========================== */
+@media (max-width: 425px) {
+  .header__logo {
+    margin: 1em 0;
+  }
+  .banner__content {
+    margin: 0 2em 2em;
+  }
+  #buttonHeader {
+    display: none;
+  }
+  .about div {
+    margin: 0 1.2em;
+  }
+  .faq__container {
+    margin: 0 1.2em;
+  }
+  .comments__container {
+    margin: 0 1.2em;
+  }
+  .comments__right div {
+    padding: 3em 2.5em;
+  }
+  .comments__title {
+    text-align: justify;
+  }
+  .modal {
+    width: 87%;
+  }
 }
